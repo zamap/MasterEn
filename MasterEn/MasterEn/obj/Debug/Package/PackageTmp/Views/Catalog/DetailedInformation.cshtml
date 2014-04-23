@@ -1,0 +1,34 @@
+﻿@model MasterEn.Models.CatalogItemModel
+@{
+    ViewBag.Title = "Полная информация";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*@if (Roles.IsUserInRole("Admin"))*@
+
+@Html.ActionLink("Edit", "Edit", "Catalog", new { сatalogItemId = @Model.CatalogItemId }, new { @class = "btn-default" })
+@Html.ActionLink("Delete", "Delete", "Catalog", new { сatalogItemId = @Model.CatalogItemId }, new { @class = "btn-default" })
+
+<h2>Полная информация о товаре</h2>
+<div class="container">
+
+    <h3>@Model.Name</h3>
+    <div class="col-md-4">
+        <div class="thumbnail" id="ex1">
+            <img src="/Catalog/GetImage/@Model.CatalogItemId" class="zoomImg" alt="@Model.Name" />
+        </div>
+        <div class="lead"></div>
+        <div class="thumbnail">
+            @Html.Raw(@Model.Video)
+        </div>
+    </div>
+
+    <div class="col-md-8">
+        <div class="caption">
+            <h4>Для детей от @Model.Age лет</h4>
+            <p>@Model.ShortDescription</p>
+            @Html.Raw(@Model.Description)
+            <b>Цена: @Model.Price р.</b>
+        </div>
+    </div>
+    <p><a href="#" class="btn btn-default right" role="button">Заказать</a></p>
+</div>

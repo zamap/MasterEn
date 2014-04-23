@@ -1,0 +1,37 @@
+﻿@model MasterEn.Models.CatalogItemModel
+@{
+    ViewBag.Title = "Полная информация";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*@if (Roles.IsUserInRole("Admin"))*@
+
+@Html.ActionLink("Edit", "Create", "Home", new { сatalogItemId = @Model.CatalogItemId }, new { @class = "btn-default" })
+@Html.ActionLink("Edit", "Edit", "Catalog", new { сatalogItemId = @Model.CatalogItemId }, new { @class = "btn-default" })
+@Html.ActionLink("Delete", "Delete", "Catalog", new { сatalogItemId = @Model.CatalogItemId }, new { @class = "btn-default" })
+
+<h2>Полная информация о товаре</h2>
+<div class="container">
+
+    <h3>@Model.Name</h3>
+
+    <div class="col-md-5">
+        <div class="thumbnail" id="ex1">
+            <img src="data:image/png;base64,@Convert.ToBase64String(Model.SmallImage)" alt="@Model.Name" />
+        </div>
+        <div class="lead"></div>
+        <div class="thumbnail">
+            @*<iframe width="100%" height="250px" src="//www.youtube.com/embed/DmEBLgP2DaE" frameborder="0" allowfullscreen></iframe>*@
+            @Html.Raw(@Model.Video)
+        </div>
+    </div>
+
+    <div class="col-md-7">
+        <div class="caption">
+            <h4>Для детей от @Model.Age лет</h4>
+            <p>@Model.ShortDescription</p>
+            @Html.Raw(@Model.Description)
+            <b>Цена: @Model.Price р.</b>
+        </div>
+    </div>
+    <p><a href="#" class="btn btn-default right" role="button">Заказать</a></p>
+</div>

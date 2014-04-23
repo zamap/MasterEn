@@ -1,0 +1,60 @@
+﻿@model MasterEn.Models.MyViewModel
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Create Foo Bar</h3>
+        </div>
+
+        @using (Html.BeginForm("Create", "Home", FormMethod.Post, new { @class = "modal-form" }))
+{
+    @Html.ValidationSummary()
+
+    <div class="modal-body">
+        <div>
+            @Html.LabelFor(x => x.Foo)
+            @Html.EditorFor(x => x.Foo)
+            @Html.ValidationMessageFor(x => x.Foo)
+        </div>
+        <div>
+            @Html.LabelFor(x => x.Bar)
+            @Html.EditorFor(x => x.Bar)
+            @Html.ValidationMessageFor(x => x.Bar)
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Undo</button>
+  
+        <button id="btn-person-submit" class="btn btn-primary" type="submit">Save</button>
+    </div>
+
+}
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+@section Scripts
+    {
+    <script type="text/javascript">
+ 
+        // Handle submitting of new information for Person.
+        // This will attempt to save new info
+        // If save was successful, it will close the Modal and reload page to see updated info
+        // Otherwise it will only reload contents of the Modal
+        $(document).on('click', '#btn-person-submit', function () {
+            var self = $(this);
+            $.ajax({
+                url: 'Home/SendBuyRequest',
+                type: 'POST',
+                data: self.closest('form').serialize(),
+                success: function (data) {
+                    if (data.success == true) {
+                        $('#modal-person').modal('hide');
+                        location.reload(false)
+                    } else {
+                        $('#modal-person').html(data);
+                    }
+                }
+            });
+        });
+    </script>
+}

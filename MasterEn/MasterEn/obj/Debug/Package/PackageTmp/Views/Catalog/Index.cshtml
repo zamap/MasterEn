@@ -1,0 +1,43 @@
+﻿@model MasterEn.Models.CatalogViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+<h2>Каталог товаров</h2>
+@{
+    var count = 1;
+}
+<div class="container">
+
+    @foreach (var item in Model.CatalogItemModels)
+    {
+        if(count ==1)
+        {
+            <div class="lead"></div>
+            @:<div class="row">
+        }
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+                <h3>@item.Name</h3>
+                <img src="data:image/jpeg;base64,@Convert.ToBase64String(item.SmallImage)" alt="@item.Name" />
+              
+                <div class="caption">
+                    <h4>Для детей от @item.Age лет</h4>
+                    <p>@item.ShortDescription</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <b>Цена: @item.Price р.</b>
+                        </div>
+                        @Html.ActionLink("Подробнее", "DetailedInformation", "Catalog", new { сatalogItemId = item.CatalogItemId }, new { @class = "col-md-6" })
+                    </div>
+                </div>
+                <p><a href="#" class="btn btn-default right" role="button">Заказать</a></p>
+            </div>
+        </div>
+        if (count == 4)
+        {
+            @:</div>
+            count = 0;
+        }
+        count = count + 1;
+    }
+</div>

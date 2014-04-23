@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img src="~/Content/Images/academic.png" />&nbsp;&nbsp;Master</a>
+              @*<div class="row"> <div class="col-sm-1"><img src="~/Content/Images/academic.png" /></div> @Html.ActionLink("MasterEn", "Index", "Home", null, new { @class = "navbar-brand" })</div>*@
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Главная", "Index", "Home")</li>
+                   
+                     <li class="dropdown">
+                         <a href="" class="dropdown-toggle" data-toggle="dropdown">О курсах<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Учебные материалы", "LearningMaterials", "Home")</li>
+                            <li>@Html.ActionLink("Уровни обучения", "LearningLevels", "Home")</li>
+                            <li>@Html.ActionLink("Преподаватель", "Teacher", "Home")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">Стоимость<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Стоимость услуг", "PriceList", "Home")</li>
+                            <li>@Html.ActionLink("Способы оплаты", "WaysTOPay", "Home")</li>
+                            <li>@Html.ActionLink("Договор", "Contract", "Home")</li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Как начать", "HowToStart", "Home")</li>
+                    <li>@Html.ActionLink("Ссылки", "UsefullLinks", "Home")</li>
+                    <li>@Html.ActionLink("Контакты", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Интернет-магазин", "Index", "Catalog")</li>
+                </ul>
+                @*@Html.Partial("_LoginPartial")*@
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+     
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Курсы английского языка "Мастер"</p>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

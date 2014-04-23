@@ -1,0 +1,211 @@
+﻿@*@{
+        ViewBag.Title = "Home Page";
+    }
+    <div class="container lead"></div>
+    <div class="container">
+        <div class="col-md-4">
+            <h2>Мы предлагаем:</h2>
+            <ul>
+                <li>Занятия в Виртуальном классе</li>
+                <li>Современные учебники зарубежных издательств</li>
+                <li>Учебные фильмы и другие интересные дополнительные материалы</li>
+                <li>Обучение индивидуально и в группе (от двух человек)</li>
+                <li>Английский разговорный клуб</li>
+                <li>Все уровни обучения: от начинающего до продвинутого</li>
+                <li>Низкие цены!</li>
+            </ul>
+        </div>
+        <div class="col-md-8">
+            <div class="thumbnail">
+                <div id="carousel-example-generic" class="carousel slide">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="~/Content/Images/slider1.jpg" alt="english teacher" />
+                            <div class="carousel-caption">
+                                <h2>ДИСТАНЦИОННОЕ ОБУЧЕНИЕ</h2>
+                                <p>Путь от преподавателя до ученика стирается в эпоху Интернет, делая обучение комфортным из любой точки планеты.</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="~/Content/Images/slider2.jpg" alt="english teacher" />
+                            <div class="carousel-caption pull-right">
+                                <h2>СОВРЕМЕННЫЕ УЧЕБНЫЕ ПОСОБИЯ</h2>
+                                <p>Будут подобраны индивидуально, с учетом Ваших текущих потребностей</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="~/Content/Images/slider3.jpg" alt="english teacher" />
+                            <div class="carousel-caption">
+                                <h2>ОБУЧЕНИЕ ИНДИВИДУАЛЬНО И В ГРУППЕ</h2>
+                                <p>Эффективная практика - комбинирование индивидуальных занятия с групповыми уроками</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="~/Content/Images/slider4.jpg" alt="материалы для изучающий английский язык" />
+                            <div class="carousel-caption right">
+                                <h2>ВСЕ УРОВНИ ОБУЧЕНИЯ</h2>
+                                <p>Мы несомненно поможем Вам выйти на новый уровень владения английским языком.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                        <span class="icon-prev"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                        <span class="icon-next"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <h3 class="text-center">Бесплатный пробный урок</h3>
+                <ul>
+                    <li>Как работает Виртуальный класс?</li>
+                    <li>Как проходит урок?</li>
+                    <li>Подходят ли мне занятия онлайн?</li>
+                </ul>
+
+                <div class=" text-right">@Html.ActionLink("Подробнее", "HowToStart", "Home")</div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <h3 class="text-center">Что необходимо для онлайн занятий?</h3>
+                <ul>
+                    <li>Доступ в интернет (выделенная линия, скорость от 128 кб/сек)</li>
+                    <li>Микрофон и наушники</li>
+                    <li>И, конечно, Ваше желание!</li>
+                </ul>
+                <div class=" text-right">@Html.ActionLink("Подробнее", "HowToStart", "Home")</div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <h3 class="text-center">Акция!</h3>
+                <ul>
+                    <li>Занимайтесь в паре по цене индивидуальных занятий!</li>
+                </ul>
+                <div class=" text-right">@Html.ActionLink("Подробнее", "PriceList", "Home")</div>
+            </div>
+        </div>
+    </div>*@
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@*<a href="/Home/Create" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Launch demo modal</a>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>*@
+
+@*<div id="gameModal" class="modal  fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div id="gameContainer">
+    </div>
+</div>
+
+<button id="showGame">Show Game Listing</button>*@
+
+
+
+<h1>Manage People</h1>
+
+
+<a type="button"
+   class="btn"
+   href="#article-editor"
+   data-toggle="modal">Click me</a>
+
+<div class="modal-body">
+    <div class="row-fluid">
+        <div class="controls span6">
+            <label class="control-label" for="Title">Title and summary</label>
+            <input type="text"
+                   class="input-xlarge" id="Title" name="Title"
+                   placeholder="Title of the article" />
+            <textarea class="input-xlarge" id="Summary"
+                      name="Summary" rows="5" cols="0"
+                      placeholder="Summary"></textarea>
+        </div>
+        <div class="controls span6">
+            <label class="control-label" for="Title">Date of publication</label>
+            <input type="month" class="input-xlarge" id="PubMonth" name="PubMonth" />
+            <label class="control-label" for="Magazine">Publication</label>
+            <input type="text" class="input-xlarge" id="Magazine" name="Magazine"
+                   placeholder="Magazine" />
+            <input type="text" class="input-xlarge" id="Url" name="Url"
+                   placeholder="Url" />
+        </div>
+    </div>
+</div>
+
+<div id="validationSummary" class="validation-summary">
+    <ul></ul>
+</div>
+<button class="btn-trigger-modal">xxxxx</button>
+
+
+<div id="modal-person" class="modal  fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+    </div>
+
+    @section Scripts
+    {
+        <script type="text/javascript">
+            // Handle "Edit Person" button click.
+            // This will make an ajax call, get information for person,
+            // put it all in the modal and display it
+            $(document).on('click', '.btn-trigger-modal', function () {
+                $.ajax({
+                    url: 'Home/Create',
+                    type: 'GET',
+                    success: function (data) {
+                        $('#modal-person').html(data).modal('show');
+                    }
+                });
+            });
+            $(document).on('click', '#btn-person-submit', function () {
+                var url = "Home/SendBuyRequest";
+                var postData = form.serialize();
+
+                $.post(url, postData, function (data) {
+                    if (data.toLowerCase() == "ok") {
+                        alert("Data saved!");
+                        return;
+                    }
+            });
+            });
+            //// Handle submitting of new information for Person.
+            //// This will attempt to save new info
+            //// If save was successful, it will close the Modal and reload page to see updated info
+            //// Otherwise it will only reload contents of the Modal
+            //$(document).on('click', '#btn-person-submit', function () {
+            //    var self = $(this);
+            //    $.ajax({
+            //        url: 'Home/SendBuyRequest',
+            //        type: 'POST',
+            //        data: self.closest('form').serialize(),
+            //        success: function (data) {
+            //            if (data.success == true) {
+            //                $('#modal-person').modal('hide');
+            //                location.reload(false)
+            //            } else {
+            //                $('#modal-person').html(data);
+            //            }
+            //        }
+            //    });
+            //});
+        </script>
+    }
